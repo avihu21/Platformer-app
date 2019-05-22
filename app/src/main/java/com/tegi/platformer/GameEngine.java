@@ -64,7 +64,7 @@ class GameEngine extends SurfaceView implements Runnable,GameEngineBroadcaster,E
             if (!mGameStat.getPaused()){
                 mPhysicsEngine.update(mFPS,mLevelManager.getGameObjects(),mGameStat);
             }
-            mRenderer.draw(mLevelManager,getGameObjects(),mGameStat,mHUD);
+            mRenderer.draw(mLevelManager,getGameobjects(),mGameStat,mHUD);
 
             long timeThisFrame = System.currentTimeMillis() - frameStartTime;
 

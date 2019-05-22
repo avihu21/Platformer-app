@@ -87,11 +87,11 @@ final class LevelManager {
                         break;
 
                     case 'g':
-                        //objects.add(factory.create(new GrassTileSpec(),coords));
+                        objects.add(factory.create(new GrassTileSpec(),coords));
                         break;
 
                     case 'o':
-                        //objects.add(factory.create(new ObjectiveTileSpec(),coords));
+                        objects.add(factory.create(new ObjectiveTileSpec(),coords));
                         break;
 
                     case 'm':
@@ -99,16 +99,81 @@ final class LevelManager {
                         break;
 
                     case 'b':
-                        //objects.add(factory.create(new BrickTileSpec(),coords));
+                        objects.add(factory.create(new BrickTileSpec(),coords));
                         break;
 
                     case 'c':
-                        //objects.add(factory.create(new CartTileSpec(),coords));
+                        objects.add(factory.create(new CartTileSpec(),coords));
+                        break;
+
+                    case 's':
+                        objects.add(factory.create(new StonePileTileSpec(),coords));
+                        break;
+
+                    case 'l':
+                        objects.add(factory.create(new CoalTileSpec(),coords));
+                        break;
+
+                    case 'n':
+                        objects.add(factory.create(new ConcreteTileSpec(),coords));
+                        break;
+
+                    case 'a':
+                        objects.add(factory.create(new LamppostTileSpec(),coords));
+                        break;
+
+                    case 'r':
+                        objects.add(factory.create(new ScorchedTileSpec(),coords));
+                        break;
+
+                    case 'w':
+                        objects.add(factory.create(new SnowTileSpec(),coords));
+                        break;
+
+                    case 't':
+                        objects.add(factory.create(new StalactiteTileSpec(),coords));
+                        break;
+
+                    case 'i':
+                        objects.add(factory.create(new StalagmiteTileSpec(),coords));
+                        break;
+
+                    case 'd':
+                        objects.add(factory.create(new DeadTreeTileSpec(),coords));
+                        break;
+
+                    case 'e':
+                        objects.add(factory.create(new SnowyTreeTileSpec(),coords));
+                        break;
+
+                    case 'x':
+                        objects.add(factory.create(new CollectibleObjectSpec(),coords));
+                        break;
+
+                    case 'z':
+                        //objects.add(factory.create(new FireTileSpec(),coords));
+                        break;
+
+                    case 'y':
+                        objects.add(factory.create(new InvisibleDeathTenByTenSpec(),coords));
+                        break;
+
+                    case '.':
+                        //nothing to see here
+                        break;
+
+                    default:
+                        Log.e("Unhandled item in level","row:"+row+"column:"+column);
                         break;
                 }
             }
 
         }
+    }
+
+
+    ArrayList<GameObject> getGameObjects(){
+        return objects;
     }
 
 

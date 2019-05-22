@@ -1,6 +1,6 @@
 package com.tegi.platformer;
 
-import android.graphics.Camera;
+
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -23,7 +23,7 @@ class Renderer {
         mPaint = new Paint();
 
         //initialize the camera
-        mCamera = Camera(screenSize.x,screenSize.y);
+        mCamera = Camera((int)screenSize.x,(int)screenSize.y);
     }
 
     int getPixelsPerMeter(){
