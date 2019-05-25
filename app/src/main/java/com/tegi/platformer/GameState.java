@@ -35,6 +35,10 @@ final class GameState {
         coinsCollected++;
     }
 
+    int getCoinsRemaining(){
+        return mCoinsAvailable - coinsCollected;
+    }
+
     void coinAddedToLevel(){
         mCoinsAvailable++;
     }

@@ -23,7 +23,7 @@ class Renderer {
         mPaint = new Paint();
 
         //initialize the camera
-        mCamera = Camera((int)screenSize.x,(int)screenSize.y);
+        mCamera = new Camera(screenSize.x,screenSize.y);
     }
 
     int getPixelsPerMeter(){
