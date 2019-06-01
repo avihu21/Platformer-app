@@ -70,6 +70,48 @@ class PlayerTransform extends Transform{
         //this method create small rectangles around the player that act as colliders
     }
 
+    //called by handle input component to let us know a jump has been triggered
+    void triggerJump(){
+        mJumpTriggered = true;
+    }
+
+    //called by movement component to let Transform know that movement component is aware jump was triggered
+    void handlingJump(){
+        mJumpTriggered = false;
+    }
+
+    //used by movement component to find out if jump has triggered
+    boolean jumpTriggered(){
+        return mJumpTriggered;
+    }
+    void setNoGrounded(){
+        mGrounded = false;
+    }
+
+    void triggerBumpedHead(){
+        mBumpedHeadTriggered = true;
+    }
+
+    void handlingBumpedHead(){
+        mBumpedHeadTriggered = false;
+    }
+
+    boolean bumpedHead(){
+        return mBumpedHeadTriggered;
+    }
+
+    void notGrounded(){
+        mGrounded = false;
+    }
+
+    void grounded(){
+        mGrounded = true;
+    }
+
+    boolean isGrounded(){
+        return mGrounded;
+    }
+
 
 
 }
