@@ -58,8 +58,15 @@ class PlayerInputComponent implements InputObserver{ //implements InputObserver 
                     if (buttons.get(HUD.LEFT).contains(x,y)){
                         //player has pressed left
                         mPlayerTransform.headLeft();
+                    } else if (buttons.get(HUD.RIGHT).contains(x,y)){
+                        //player has pressed right
+                        mPlayerTransform.headRight();
+                    } else if (buttons.get(HUD.JUMP).contains(x,y)){
+                        //player has released the jump button
+                        mPlayerPlayerTransform.triggerJump();
                     }
                     break;
+
 
             }
         }
