@@ -24,7 +24,7 @@ class Camera {
         mCurrentCameraWorldCenter = new PointF();
     }
 
-    int getCenter(){
+    int getyCenter(){
         return mScreenCenterY;
     }
 
