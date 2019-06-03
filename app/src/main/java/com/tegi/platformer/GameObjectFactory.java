@@ -27,10 +27,10 @@ class GameObjectFactory {
 
         switch (object.getTag()){
             case "Background":
-                //code coming soon
+                object.setTransform(new BackgroundTransform(spec.getSpeed(),spec.getSize().x,spec.getSize().y,location));
                 break;
             case "Player":
-                //code coming soon
+                object.setTransform(new PlayerTransform(spec.getSpeed(),spec.getSize().x,spec.getSize().y,location));
                 break;
             default://normal transform
                 object.setTransform(new Transform(spec.getSpeed(),spec.getSize().x,spec.getSize().y,location));
@@ -41,15 +41,15 @@ class GameObjectFactory {
         for (int i = 0;i < mNumComponents;i++){
             switch (spec.getComponents()[i]){
                 case "PlayerInputComponent":
-                    //code coming soon
+                    object.setPlayerInputTransform(new PlayerInputComponent(mGameEngineReference));
                     break;
 
                 case "AnimatedGraphicsComponent":
-                    //code coming soon
+                    object.setGraphics(new AnimatedGraphicsComponent(),mContext,spec,spec.getSize(),mPixelsPerMeter);
                     break;
 
                 case "PlayerUpdateComponent":
-                    //code coming soon
+                    object.setMovement(new PlayerUpdateComponent());
                     break;
 
                 case "InanimateBlockGraphicsComponent":
@@ -69,11 +69,11 @@ class GameObjectFactory {
                     break;
 
                 case "BackgroundGraphicsComponent":
-                    //code coming soon
+                    object.setGraphics(new BackgroundGraphicsComponent(),mContext,spec,spec.getSize(),mPixelsPerMeter);
                     break;
 
                 case "BackgroundUpdateComponent":
-                    //code coming soon
+                    object.setMovement(new BackgroundUpdateComponent());
                     break;
 
                 default:

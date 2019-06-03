@@ -69,21 +69,21 @@ final class LevelManager {
 
                 switch (levelToLoad.get(row).charAt(column)){
                     case '1':
-                        //objects.add(factory.create(new BackgroundCitySpec(),coords));
+                        objects.add(factory.create(new BackgroundCitySpec(),coords));
                         break;
 
                     case '2':
-                        //objects.add(factory.create(new BackgroundUndergroundSpec(),coords));
+                        objects.add(factory.create(new BackgroundUndergroundSpec(),coords));
                         break;
 
                     case '3':
-                        //objects.add(factory.create(new BackgroundMountainsSpec(),coords));
+                        objects.add(factory.create(new BackgroundMountainSpec(),coords));
                         break;
 
                     case 'p':
-                        //objects.add(factory.create(new PlayerSpec(),coords));
+                        objects.add(factory.create(new PlayerSpec(),coords));
                         //remember the location of the player
-                        //PLAYER_INDEX = objects.size()-1;
+                        PLAYER_INDEX = objects.size()-1;
                         break;
 
                     case 'g':
@@ -151,7 +151,7 @@ final class LevelManager {
                         break;
 
                     case 'z':
-                        //objects.add(factory.create(new FireTileSpec(),coords));
+                        objects.add(factory.create(new FireTileSpec(),coords));
                         break;
 
                     case 'y':
