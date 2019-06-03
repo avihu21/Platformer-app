@@ -40,13 +40,21 @@ class BackgroundGraphicsComponent implements GraphicsComponent{
         float floatendY = ((cam.getyCenter() + ((cam.getCameraWorldCenterY() - position.y - t.getSize().y) * cam.getPixelsPerMeterY())));
         int endY = (int) floatendY;
 
+        //position the regular bitmap
+        Rect fromRect1 = new Rect(0,0,width - scaledxClip,height);
+        Rect toRect1 = new Rect(scaledxClip,startY,width,endY);
+
         //position the reversed bitmap
         Rect fromRect2 = new Rect(width - scaledxClip,0,width,height);
         Rect toRect2 = new Rect(0,startY,scaledxClip,endY);
 
         //draw the two bitmaps
         if (!bt.getReversedFirst()){
-            canvas.drawBitmap(bitmap,);
+            canvas.drawBitmap(bitmap,fromRect1,toRect1,paint);
+            canvas.drawBitmap(bitmapReversed,fromRect2,toRect2,paint);
+        } else {
+            canvas.drawBitmap(bitmap,fromRect2,toRect2,paint);
+            canvas.drawBitmap(bitmapReversed,fromRect1,toRect1,paint);
         }
 
     }
