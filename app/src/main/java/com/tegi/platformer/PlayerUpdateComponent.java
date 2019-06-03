@@ -44,6 +44,36 @@ class PlayerUpdateComponent implements UpdateComponent{
             pt.handlingJump();
             mJumpStartTime = System.currentTimeMillis();
         }
+
+        //gravity
+        if (!mIsJumping){
+            //player is not jumping apply GRAVITY
+            location.y += GRAVITY/fps;
+        } else if (mIsJumping){
+            //player is jumping
+            pt.setNoGrounded();
+
+            //still in upward phase of the jump
+            if (System.currentTimeMillis() < mJumpStartTime + (MAX_JUMP_TIME/1.5)){
+                //keep going up
+                location.y -= (GRAVITY * 1.8)/fps;
+            }
+
+            //in downward phase of the jump
+            else if (System.currentTimeMillis() < mJumpStartTime + MAX_JUMP_TIME){
+                //come back down
+                location.y += (GRAVITY)/fps;
+            }
+
+            //has the jump ended
+            else if (System.currentTimeMillis() > mJumpStartTime + MAX_JUMP_TIME){
+                //time to end the jump
+                mIsJumping = false;
+            }
+        }
+
+        //let the colliders know the new position
+        t.updateCollider();
     }
 
 
