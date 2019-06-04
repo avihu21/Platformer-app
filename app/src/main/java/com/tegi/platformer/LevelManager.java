@@ -95,7 +95,7 @@ final class LevelManager {
                         break;
 
                     case 'm':
-                        //objects.add(factory.create(new MovablePlatformSpec(),coords));
+                        objects.add(factory.create(new MoveablePlatformSpec(),coords));
                         break;
 
                     case 'b':
